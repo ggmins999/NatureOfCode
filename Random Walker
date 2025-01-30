@@ -1,0 +1,66 @@
+float oneX;
+float oneY;
+
+float twoX;
+float twoY;
+
+void setup() {
+  size(600, 800);
+
+  oneX = width * 0.25;
+  oneY = height / 2;
+
+  twoX = width *0.75;
+  twoY = height / 2;
+
+  background(128);
+  frameRate(1000);
+}
+
+void draw() {
+  // Set stroke to a random RGB color for one points
+  stroke(random(255), random(255), random(255));
+  strokeWeight(2);
+ 
+
+  oneX += random(-1, 1);
+  oneY += random(-1, 1);
+
+  if (oneX < 0) {
+    oneX = width;
+  }
+  if (oneX > width) {
+    oneX = 0;
+  }
+
+  if (oneY < 0) {
+    oneY = height;
+  }
+  if (oneY > height) {
+    oneY = 0;
+  }
+
+  point(oneX, oneY);
+
+  // Set stroke to a random RGB color for two points
+  stroke(random(255), random(255), random(255));
+
+  twoX += random(-1, 1);
+  twoY += random(-1, 1);
+
+  if (twoX < 0) {
+    twoX = width;
+  }
+  if (twoX > width) {
+    twoX = 0;
+  }
+
+  if (twoY < 0) {
+    twoY = height;
+  }
+  if (twoY > height) {
+    twoY = 0;
+  }
+
+  point(twoX, twoY);
+}
